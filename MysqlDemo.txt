@@ -1,0 +1,475 @@
+Enter password: ****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.32 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database SVCE;
+Query OK, 1 row affected (0.08 sec)
+
+mysql> show databases
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| 3pm                |
+| bank               |
+| books              |
+| cs                 |
+| dd                 |
+| dddd               |
+| demo               |
+| demo1              |
+| demo23             |
+| entity             |
+| fueldemo           |
+| impact22           |
+| impactjava         |
+| information_schema |
+| javademo           |
+| mmmmm              |
+| mysql              |
+| performance_schema |
+| proj               |
+| project            |
+| sakila             |
+| sp                 |
+| stud               |
+| student            |
+| super20            |
+| svce               |
+| sys                |
+| world              |
++--------------------+
+28 rows in set (0.10 sec)
+
+mysql> create table tblEmployee(id int,name varchar(50),city varchar(50));
+       create table tblEmployee(id int,name varchar(50),city varcreate table tblEmployee(id int,name varchar(50),city varchar(50));
+ERROR 1046 (3D000): No database selected
+mysql> ^C
+mysql> create table tblEmployee(id int,name varchar(50),city varchar(50));
+ERROR 1046 (3D000): No database selected
+mysql> use SVCE;
+Database changed
+mysql> create table tblEmployee(id int,name varchar(50),city varchar(50));
+Query OK, 0 rows affected (0.06 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_svce |
++----------------+
+| tblemployee    |
++----------------+
+1 row in set (0.02 sec)
+
+mysql> desc tblEmployee;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(50) | YES  |     | NULL    |       |
+| city  | varchar(50) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.03 sec)
+
+mysql> insert into tblEmployee (id,name,city) values(101,'Rohit','Nagpur');
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into tblEmployee (id,name,city) values(102,'virat','Delhi');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into tblEmployee (id,name,city) values(103,'pant','Delhi');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into tblEmployee (id,name,city) values(104,'surya','mumbai');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into tblEmployee (id,name,city) values(105,'MS','Ranchi');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into tblEmployee (id,name,city) values(106,'sachin','Mumbai');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into tblEmployee (id,name,city) values(107,'Dinesh','Hyd');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into tblEmployee (id,name,city) values(108,'Siraj','Hyd');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into tblEmployee (id,name,city) values(109,'Hardik','Gujrat');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> insert into tblEmployee (id,name,city) values(110,'Rahul','KA');
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from tblEmployee;
++------+--------+--------+
+| id   | name   | city   |
++------+--------+--------+
+|  101 | Rohit  | Nagpur |
+|  102 | virat  | Delhi  |
+|  103 | pant   | Delhi  |
+|  104 | surya  | mumbai |
+|  105 | MS     | Ranchi |
+|  106 | sachin | Mumbai |
+|  107 | Dinesh | Hyd    |
+|  108 | Siraj  | Hyd    |
+|  109 | Hardik | Gujrat |
+|  110 | Rahul  | KA     |
++------+--------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select id,name,city from tblemployee;
++------+--------+--------+
+| id   | name   | city   |
++------+--------+--------+
+|  101 | Rohit  | Nagpur |
+|  102 | virat  | Delhi  |
+|  103 | pant   | Delhi  |
+|  104 | surya  | mumbai |
+|  105 | MS     | Ranchi |
+|  106 | sachin | Mumbai |
+|  107 | Dinesh | Hyd    |
+|  108 | Siraj  | Hyd    |
+|  109 | Hardik | Gujrat |
+|  110 | Rahul  | KA     |
++------+--------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select id,city from tblEmployee;
++------+--------+
+| id   | city   |
++------+--------+
+|  101 | Nagpur |
+|  102 | Delhi  |
+|  103 | Delhi  |
+|  104 | mumbai |
+|  105 | Ranchi |
+|  106 | Mumbai |
+|  107 | Hyd    |
+|  108 | Hyd    |
+|  109 | Gujrat |
+|  110 | KA     |
++------+--------+
+10 rows in set (0.01 sec)
+
+mysql> desc tblemployee;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(50) | YES  |     | NULL    |       |
+| city  | varchar(50) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> select id,city from tblEmployee;
++------+--------+
+| id   | city   |
++------+--------+
+|  101 | Nagpur |
+|  102 | Delhi  |
+|  103 | Delhi  |
+|  104 | mumbai |
+|  105 | Ranchi |
+|  106 | Mumbai |
+|  107 | Hyd    |
+|  108 | Hyd    |
+|  109 | Gujrat |
+|  110 | KA     |
++------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select id,city from tblEmployee;
++------+--------+
+| id   | city   |
++------+--------+
+|  101 | Nagpur |
+|  102 | Delhi  |
+|  103 | Delhi  |
+|  104 | mumbai |
+|  105 | Ranchi |
+|  106 | Mumbai |
+|  107 | Hyd    |
+|  108 | Hyd    |
+|  109 | Gujrat |
+|  110 | KA     |
++------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select id  as EmployeeId,name as EmployeeName,city as EmployeeCity from tblEmployee;
++------------+--------------+--------------+
+| EmployeeId | EmployeeName | EmployeeCity |
++------------+--------------+--------------+
+|        101 | Rohit        | Nagpur       |
+|        102 | virat        | Delhi        |
+|        103 | pant         | Delhi        |
+|        104 | surya        | mumbai       |
+|        105 | MS           | Ranchi       |
+|        106 | sachin       | Mumbai       |
+|        107 | Dinesh       | Hyd          |
+|        108 | Siraj        | Hyd          |
+|        109 | Hardik       | Gujrat       |
+|        110 | Rahul        | KA           |
++------------+--------------+--------------+
+10 rows in set (0.00 sec)
+
+mysql> select id  as EmployeeId,name as EmployeeName,city  EmployeeCity from tblEmployee;
++------------+--------------+--------------+
+| EmployeeId | EmployeeName | EmployeeCity |
++------------+--------------+--------------+
+|        101 | Rohit        | Nagpur       |
+|        102 | virat        | Delhi        |
+|        103 | pant         | Delhi        |
+|        104 | surya        | mumbai       |
+|        105 | MS           | Ranchi       |
+|        106 | sachin       | Mumbai       |
+|        107 | Dinesh       | Hyd          |
+|        108 | Siraj        | Hyd          |
+|        109 | Hardik       | Gujrat       |
+|        110 | Rahul        | KA           |
++------------+--------------+--------------+
+10 rows in set (0.00 sec)
+
+mysql> desc tblEmployee;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(50) | YES  |     | NULL    |       |
+| city  | varchar(50) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+mysql> select e1.id,e1.name ,e1.city from tblEmployee e1;
++------+--------+--------+
+| id   | name   | city   |
++------+--------+--------+
+|  101 | Rohit  | Nagpur |
+|  102 | virat  | Delhi  |
+|  103 | pant   | Delhi  |
+|  104 | surya  | mumbai |
+|  105 | MS     | Ranchi |
+|  106 | sachin | Mumbai |
+|  107 | Dinesh | Hyd    |
+|  108 | Siraj  | Hyd    |
+|  109 | Hardik | Gujrat |
+|  110 | Rahul  | KA     |
++------+--------+--------+
+10 rows in set (0.00 sec)
+
+mysql>
+mysql>
+mysql> desc tblemployee
+    -> ;
++-------+-------------+------+-----+---------+-------+
+| Field | Type        | Null | Key | Default | Extra |
++-------+-------------+------+-----+---------+-------+
+| id    | int         | YES  |     | NULL    |       |
+| name  | varchar(50) | YES  |     | NULL    |       |
+| city  | varchar(50) | YES  |     | NULL    |       |
++-------+-------------+------+-----+---------+-------+
+3 rows in set (0.02 sec)
+
+mysql> show tables;
++----------------+
+| Tables_in_svce |
++----------------+
+| tblemployee    |
++----------------+
+1 row in set (0.01 sec)
+
+mysql>
+mysql> select id,name,city from tblEmployee;
++------+--------+--------+
+| id   | name   | city   |
++------+--------+--------+
+|  101 | Rohit  | Nagpur |
+|  102 | virat  | Delhi  |
+|  103 | pant   | Delhi  |
+|  104 | surya  | mumbai |
+|  105 | MS     | Ranchi |
+|  106 | sachin | Mumbai |
+|  107 | Dinesh | Hyd    |
+|  108 | Siraj  | Hyd    |
+|  109 | Hardik | Gujrat |
+|  110 | Rahul  | KA     |
++------+--------+--------+
+10 rows in set (0.00 sec)
+
+mysql> select id,name,city from tblEmployee where city='Delhi';
++------+-------+-------+
+| id   | name  | city  |
++------+-------+-------+
+|  102 | virat | Delhi |
+|  103 | pant  | Delhi |
++------+-------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select id,name,city from tblEmployee where name='Siraj';
++------+-------+------+
+| id   | name  | city |
++------+-------+------+
+|  108 | Siraj | Hyd  |
++------+-------+------+
+1 row in set (0.00 sec)
+
+mysql> select id,name,city from tblEmployee where id=110;
++------+-------+------+
+| id   | name  | city |
++------+-------+------+
+|  110 | Rahul | KA   |
++------+-------+------+
+1 row in set (0.00 sec)
+
+mysql> insert into tblEmployee (id,name,city) values(111,null,"Pune");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select id,name,city from tblEmployee;
++------+--------+--------+
+| id   | name   | city   |
++------+--------+--------+
+|  101 | Rohit  | Nagpur |
+|  102 | virat  | Delhi  |
+|  103 | pant   | Delhi  |
+|  104 | surya  | mumbai |
+|  105 | MS     | Ranchi |
+|  106 | sachin | Mumbai |
+|  107 | Dinesh | Hyd    |
+|  108 | Siraj  | Hyd    |
+|  109 | Hardik | Gujrat |
+|  110 | Rahul  | KA     |
+|  111 | NULL   | Pune   |
++------+--------+--------+
+11 rows in set (0.00 sec)
+
+mysql> select id,name,city from tblEmployee where name=null;
+Empty set (0.00 sec)
+
+mysql> select id,name,city from tblEmployee where name='null';
+Empty set (0.00 sec)
+
+mysql> select  id,name,city from tblEmployer where name is
+                                                 select  id,name,city from tblEmployee where name is null;
++------+------+------+
+| id   | name | city |
++------+------+------+
+|  111 | NULL | Pune |
++------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select  id,name,city from tblEmployee where name is null;
++------+------+------+
+| id   | name | city |
++------+------+------+
+|  111 | NULL | Pune |
++------+------+------+
+1 row in set (0.00 sec)
+
+mysql> select id,name,city from tblEmployee where id=103 and city='Delhi';
++------+------+-------+
+| id   | name | city  |
++------+------+-------+
+|  103 | pant | Delhi |
++------+------+-------+
+1 row in set (0.00 sec)
+
+mysql> select id,name,city from tblEmployee where id=103 and city='pune';
+Empty set (0.00 sec)
+
+mysql> select id ,name,city from tblEmployee where id=103 or city='pune';
++------+------+-------+
+| id   | name | city  |
++------+------+-------+
+|  103 | pant | Delhi |
+|  111 | NULL | Pune  |
++------+------+-------+
+2 rows in set (0.00 sec)
+
+mysql> select id ,name,city from tblEmployee where id=103 or city='mm';
++------+------+-------+
+| id   | name | city  |
++------+------+-------+
+|  103 | pant | Delhi |
++------+------+-------+
+1 row in set (0.00 sec)
+
+mysql> select id,name,city from tblEmployee where id in  (101,103,
+108,111);
++------+-------+--------+
+| id   | name  | city   |
++------+-------+--------+
+|  101 | Rohit | Nagpur |
+|  103 | pant  | Delhi  |
+|  108 | Siraj | Hyd    |
+|  111 | NULL  | Pune   |
++------+-------+--------+
+4 rows in set (0.00 sec)
+
+mysql> select id,name,city from tblEmployee where name in  ('virat','Siraj','Pant');
++------+-------+-------+
+| id   | name  | city  |
++------+-------+-------+
+|  102 | virat | Delhi |
+|  103 | pant  | Delhi |
+|  108 | Siraj | Hyd   |
++------+-------+-------+
+3 rows in set (0.00 sec)
+
+mysql> select id,name,city from tblEmployee where name  not in  ('virat','Siraj','Pant');
++------+--------+--------+
+| id   | name   | city   |
++------+--------+--------+
+|  101 | Rohit  | Nagpur |
+|  104 | surya  | mumbai |
+|  105 | MS     | Ranchi |
+|  106 | sachin | Mumbai |
+|  107 | Dinesh | Hyd    |
+|  109 | Hardik | Gujrat |
+|  110 | Rahul  | KA     |
++------+--------+--------+
+7 rows in set (0.00 sec)
+
+mysql> select id,name,city from tblEmployee;
++------+--------+--------+
+| id   | name   | city   |
++------+--------+--------+
+|  101 | Rohit  | Nagpur |
+|  102 | virat  | Delhi  |
+|  103 | pant   | Delhi  |
+|  104 | surya  | mumbai |
+|  105 | MS     | Ranchi |
+|  106 | sachin | Mumbai |
+|  107 | Dinesh | Hyd    |
+|  108 | Siraj  | Hyd    |
+|  109 | Hardik | Gujrat |
+|  110 | Rahul  | KA     |
+|  111 | NULL   | Pune   |
++------+--------+--------+
+11 rows in set (0.00 sec)
+
+mysql> select id,name,city from tblEmlpoyee where id between 101 a
+nd 107;\
+ERROR 1146 (42S02): Table 'svce.tblemlpoyee' doesn't exist
+mysql> select id,name,city from tblEmployee where id between 101 and 107;
++------+--------+--------+
+| id   | name   | city   |
++------+--------+--------+
+|  101 | Rohit  | Nagpur |
+|  102 | virat  | Delhi  |
+|  103 | pant   | Delhi  |
+|  104 | surya  | mumbai |
+|  105 | MS     | Ranchi |
+|  106 | sachin | Mumbai |
+|  107 | Dinesh | Hyd    |
++------+--------+--------+
+7 rows in set (0.00 sec)
+
+mysql> ^A
